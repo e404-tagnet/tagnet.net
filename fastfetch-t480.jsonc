@@ -1,0 +1,59 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "display": {
+        "separator": "  ››  ",
+        "color": {
+            "keys": "bright_cyan",
+            "title": "bright_cyan"
+        }
+    },
+    "logo": {
+        "type": "file",
+        "source": "/home/e404/.config/fastfetch/logo-t480.txt",
+        "color": {
+            "1": "bright_cyan",
+            "2": "bright_green"
+        }
+    },
+    "modules": [
+        {
+            "type": "custom",
+            "format": "\n{#bright_cyan}┌──────────────────────────────────┐",
+            "keyColor": "bright_cyan"
+        },
+        {
+            "type": "custom",
+            "format": "{#bright_cyan}│     {#39}▓▓▓▓{#45}  T480  {#39}▓▓▓▓{#bright_cyan}      │",
+            "keyColor": "bright_cyan"
+        },
+        {
+            "type": "custom",
+            "format": "{#bright_cyan}│   {#45}░░░  ThinkPad Mobile  ░░░{#bright_cyan} │",
+            "keyColor": "bright_cyan"
+        },
+        {
+            "type": "custom",
+            "format": "{#bright_cyan}└──────────────────────────────────┘\n",
+            "keyColor": "bright_cyan"
+        },
+        "title",
+        "separator",
+        "os",
+        "host",
+        "kernel",
+        "uptime",
+        "packages",
+        "shell",
+        "de",
+        "wm",
+        "terminal",
+        "cpu",
+        "gpu",
+        "memory",
+        "battery",
+        "disk",
+        "localip",
+        "break",
+        "colors"
+    ]
+}

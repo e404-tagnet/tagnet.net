@@ -1,0 +1,58 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "display": {
+        "separator": "  ››  ",
+        "color": {
+            "keys": "cyan",
+            "title": "bright_cyan"
+        }
+    },
+    "logo": {
+        "type": "auto",
+        "source": "ascii",
+        "color": {
+            "1": "cyan",
+            "2": "bright_green"
+        }
+    },
+    "modules": [
+        {
+            "type": "custom",
+            "format": "\n{#1}╔══════════════════════════════════════╗",
+            "keyColor": "cyan"
+        },
+        {
+            "type": "custom",
+            "format": "{#1}║     {#39}▓▓▓▓▓▓  AG2i  ▓▓▓▓▓▓{#1}        ║",
+            "keyColor": "cyan"
+        },
+        {
+            "type": "custom",
+            "format": "{#1}║     {#45}▒▒▒▒  TAGNET-482  ▒▒▒▒{#1}     ║",
+            "keyColor": "cyan"
+        },
+        {
+            "type": "custom",
+            "format": "{#1}╚══════════════════════════════════════╝\n",
+            "keyColor": "cyan"
+        },
+        "title",
+        "separator",
+        "os",
+        "host",
+        "kernel",
+        "uptime",
+        "packages",
+        "shell",
+        "de",
+        "wm",
+        "terminal",
+        "cpu",
+        "gpu",
+        "memory",
+        "disk",
+        "localip",
+        "break",
+        "colors"
+    ]
+}
