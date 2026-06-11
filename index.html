@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tagnet — paradigm dynamics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --base: #1e1e2e;
+            --mantle: #181825;
+            --crust: #11111b;
+            --text: #cdd6f4;
+            --subtext: #a6adc8;
+            --overlay: #6c7086;
+            --sky: #89dceb;
+            --teal: #94e2d5;
+            --green: #a6e3a1;
+            --red: #f38ba8;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--crust);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .container {
+            max-width: 640px;
+            width: 100%;
+            text-align: center;
+        }
+        .logo {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--sky);
+            letter-spacing: -0.05em;
+            margin-bottom: 0.5rem;
+        }
+        .logo span { color: var(--teal); }
+        .tagline {
+            font-size: 1.1rem;
+            color: var(--subtext);
+            margin-bottom: 3rem;
+            font-weight: 400;
+        }
+        .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--green);
+            background: rgba(166, 227, 161, 0.08);
+            border: 1px solid rgba(166, 227, 161, 0.2);
+            border-radius: 2rem;
+            padding: 0.5rem 1rem;
+            margin-bottom: 3rem;
+        }
+        .status-dot {
+            width: 8px; height: 8px;
+            background: var(--green);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto 3rem;
+        }
+        .link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.25rem;
+            background: var(--mantle);
+            border: 1px solid rgba(137, 220, 235, 0.1);
+            border-radius: 0.75rem;
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        .link:hover {
+            border-color: var(--sky);
+            background: var(--base);
+            transform: translateY(-1px);
+        }
+        .link-label {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .link-icon {
+            width: 2rem; height: 2rem;
+            display: flex; align-items: center; justify-content: center;
+            background: rgba(137, 220, 235, 0.08);
+            border-radius: 0.5rem;
+            font-size: 1rem;
+        }
+        .link-arrow {
+            color: var(--overlay);
+            font-size: 1.25rem;
+        }
+        .link:hover .link-arrow { color: var(--sky); }
+        .footer {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--overlay);
+        }
+        .footer a {
+            color: var(--teal);
+            text-decoration: none;
+        }
+        .footer a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">tag<span>net</span></div>
+        <p class="tagline">research at the edge of order and noise</p>
+
+        <div class="status">
+            <span class="status-dot"></span>
+            <span>AG2i stack online</span>
+        </div>
+
+        <div class="links">
+            <a class="link" href="https://github.com/e404-tagnet/prism" target="_blank" rel="noopener">
+                <span class="link-label">
+                    <span class="link-icon">◈</span>
+                    PRISM
+                </span>
+                <span class="link-arrow">→</span>
+            </a>
+            <a class="link" href="https://github.com/e404-tagnet/Hierarchial-VAE" target="_blank" rel="noopener">
+                <span class="link-label">
+                    <span class="link-icon">◉</span>
+                    HVAE v1
+                </span>
+                <span class="link-arrow">→</span>
+            </a>
+            <a class="link" href="https://github.com/e404-tagnet" target="_blank" rel="noopener">
+                <span class="link-label">
+                    <span class="link-icon">◆</span>
+                    GitHub
+                </span>
+                <span class="link-arrow">→</span>
+            </a>
+        </div>
+
+        <div class="footer">
+            <p>paradigm dynamics · <a href="mailto:192.55.404@protonmail.com">192.55.404@protonmail.com</a></p>
+            <p style="margin-top: 0.5rem; opacity: 0.6;">AG2i · Tailscale · Local-first</p>
+        </div>
+    </div>
+</body>
+</html>
