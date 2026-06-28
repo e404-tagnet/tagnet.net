@@ -133,18 +133,27 @@
             bottom: 1rem;
             right: 1rem;
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.7rem;
+            font-size: 0.85rem;
             color: var(--overlay);
             text-decoration: none;
-            opacity: 0.3;
-            transition: opacity 0.3s ease;
-            padding: 0.5rem;
-            border-radius: 0.25rem;
+            opacity: 0.4;
+            transition: all 0.3s ease;
+            padding: 0.6rem 0.75rem;
+            border-radius: 0.35rem;
+            border: 1px solid rgba(108, 112, 134, 0.15);
         }
         .secret-btn:hover {
             opacity: 1;
             color: var(--red);
             background: rgba(243, 139, 168, 0.1);
+            border-color: rgba(243, 139, 168, 0.3);
+        }
+        .tagline-bold {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.5rem;
+            color: var(--text);
+            margin-top: 1.5rem;
+            opacity: 0.95;
         }
     </style>
 </head>
@@ -185,7 +194,7 @@
         <div class="footer">
             <p>tagnet.net · <a href="mailto:info@tagnet.net">info@tagnet.net</a></p>
             <p style="margin-top: 0.75rem; opacity: 0.6;">privacy-focused · local-first</p>
-            <p style="margin-top: 0.75rem; opacity: 0.9;">memory scaffolds &amp; manageable compute systems</p>
+            <p class="tagline-bold">memory scaffolds &amp; manageable compute systems</p>
         </div>
         <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="secret-btn" target="_blank" rel="noopener" title="?">?</a>
     </div>
