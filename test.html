@@ -110,7 +110,7 @@
     <!-- Password Gate -->
     <div id="gate" class="gate-overlay">
         <div class="gate-card">
-            <h2>🔒 PolyChomp-UI</h2>
+            <h2>LOCK PolyChomp-UI</h2>
             <p>Login required to enter.</p>
             <input type="text" id="gate-user" placeholder="Username" autocomplete="off">
             <input type="password" id="gate-pass" placeholder="Password" autocomplete="off">
@@ -120,7 +120,7 @@
     </div>
 
     <div class="container" id="dashboard" style="display:none;">
-        <a href="index.html" class="back-link">← Back to tagnet.net</a>
+        <a href="index.html" class="back-link"><- Back to tagnet.net</a>
 
         <div class="header">
             <div class="logo">tag<span>net</span> PolyChomp-UI</div>
@@ -129,7 +129,7 @@
 
         <div class="status-bar" id="conn-bar">
             <span class="status-dot offline" id="conn-dot"></span>
-            <span class="status-text" id="conn-text">Checking Polychomp-UI…</span>
+            <span class="status-text" id="conn-text">Checking Polychomp-UI...</span>
         </div>
 
         <div class="grid">
@@ -156,23 +156,23 @@
         </div>
 
         <div class="section">
-            <h2>🔌 Plugin Registry</h2>
+            <h2>Plugins Plugin Registry</h2>
             <div id="plugin-list">
                 <p style="color:var(--overlay);font-size:.8rem;">Loading plugins…</p>
             </div>
         </div>
 
         <div class="section">
-            <h2>📊 Recent Activity</h2>
+            <h2>Activity Recent Activity</h2>
             <div id="activity-log" style="font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--subtext);line-height:1.6;">
                 <span style="color:var(--overlay)">Waiting for connection…</span>
             </div>
         </div>
 
         <div class="actions">
-            <a class="btn btn-primary" href="http://127.0.0.1:8788" target="_blank">Open Polychomp-UI →</a>
-            <button class="btn btn-ghost" onclick="refresh()">🔄 Refresh</button>
-            <button class="btn btn-ghost" onclick="clearState()">🗑 Clear Session</button>
+            <a class="btn btn-primary" href="http://127.0.0.1:8788" target="_blank">Open Polychomp-UI -></a>
+            <button class="btn btn-ghost" onclick="refresh()">Refresh Refresh</button>
+            <button class="btn btn-ghost" onclick="clearState()">Clear Clear Session</button>
         </div>
 
         <div class="footer">
@@ -243,14 +243,14 @@
             const res = await fetch(`${API}/api/projects`, { signal: AbortSignal.timeout(3000) });
             if (res.ok) {
                 dot.className = 'status-dot online';
-                text.textContent = 'Polychomp-UI online · localhost:8788';
+                text.textContent = 'Polychomp-UI online - localhost:8788';
                 log('Connected to Polychomp-UI');
                 return;
             }
         } catch (e) {}
         dot.className = 'status-dot offline';
-        text.textContent = 'Polychomp-UI offline · Start locally to see data';
-        log('Connection failed — is Polychomp running?');
+        text.innerHTML = 'Polychomp-UI unreachable - <a href="http://127.0.0.1:8788" target="_blank" style="color:var(--sky);text-decoration:underline;">start locally</a> or check CORS';
+        log('Connection blocked - HTTPS cannot reach HTTP localhost. Start Polychomp-UI on your machine.');
     }
 
     async function loadProjects() {
