@@ -3,33 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Lab — tagnet.net</title>
+    <title>PolyChomp-UI — tagnet.net</title>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --base: #1e1e2e;
-            --mantle: #181825;
-            --crust: #11111b;
-            --text: #cdd6f4;
-            --subtext: #a6adc8;
-            --overlay: #6c7086;
-            --sky: #89dceb;
-            --teal: #94e2d5;
-            --green: #a6e3a1;
-            --red: #f38ba8;
-            --yellow: #f9e2af;
-            --peach: #fab387;
-            --lavender: #b4befe;
+            --base: #1e1e2e; --mantle: #181825; --crust: #11111b;
+            --text: #cdd6f4; --subtext: #a6adc8; --overlay: #6c7086;
+            --sky: #89dceb; --teal: #94e2d5; --green: #a6e3a1; --red: #f38ba8;
+            --yellow: #f9e2af; --peach: #fab387; --lavender: #b4befe;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Inter', sans-serif;
-            background: var(--crust);
-            color: var(--text);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            font-family: 'Inter', sans-serif; background: var(--crust); color: var(--text);
+            min-height: 100vh; display: flex; flex-direction: column; align-items: center;
             padding: 2rem 1rem;
         }
         .container { max-width: 720px; width: 100%; }
@@ -37,37 +23,31 @@
         .logo { font-family: 'JetBrains Mono', monospace; font-size: 2rem; font-weight: 700; color: var(--sky); }
         .logo span { color: var(--teal); }
         .subtitle { color: var(--subtext); font-size: .9rem; margin-top: .25rem; }
-        .back-link {
-            display: inline-flex; align-items: center; gap: .4rem;
-            color: var(--overlay); font-size: .8rem; text-decoration: none;
-            margin-bottom: 1.5rem; transition: color .2s;
-        }
+        .back-link { display: inline-flex; align-items: center; gap: .4rem; color: var(--overlay); font-size: .8rem; text-decoration: none; margin-bottom: 1.5rem; transition: color .2s; }
         .back-link:hover { color: var(--sky); }
 
         /* Password Gate */
         .gate-overlay {
             position: fixed; inset: 0; background: rgba(17,17,27,.96);
-            display: flex; align-items: center; justify-content: center;
-            z-index: 100; transition: opacity .4s;
+            display: flex; align-items: center; justify-content: center; z-index: 100; transition: opacity .4s;
         }
         .gate-overlay.hidden { opacity: 0; pointer-events: none; }
         .gate-card {
-            background: var(--mantle); border: 1px solid var(--overlay);
-            border-radius: .75rem; padding: 2rem; width: 320px; text-align: center;
+            background: var(--mantle); border: 1px solid var(--overlay); border-radius: .75rem;
+            padding: 2rem; width: 340px; text-align: center;
         }
         .gate-card h2 { font-size: 1.1rem; color: var(--teal); margin-bottom: .25rem; }
         .gate-card p { font-size: .8rem; color: var(--subtext); margin-bottom: 1.25rem; }
         .gate-card input {
-            width: 100%; padding: .6rem .8rem; border-radius: .4rem;
-            border: 1px solid var(--overlay); background: var(--base);
-            color: var(--text); font-family: 'JetBrains Mono', monospace;
-            font-size: .85rem; outline: none; margin-bottom: .75rem;
+            width: 100%; padding: .6rem .8rem; border-radius: .4rem; border: 1px solid var(--overlay);
+            background: var(--base); color: var(--text); font-family: 'JetBrains Mono', monospace;
+            font-size: .85rem; outline: none; margin-bottom: .6rem;
         }
         .gate-card input:focus { border-color: var(--sky); }
         .gate-card button {
-            width: 100%; padding: .55rem; border-radius: .4rem;
-            border: none; background: var(--sky); color: var(--crust);
-            font-weight: 700; font-size: .85rem; cursor: pointer; transition: background .2s;
+            width: 100%; padding: .55rem; border-radius: .4rem; border: none;
+            background: var(--sky); color: var(--crust); font-weight: 700;
+            font-size: .85rem; cursor: pointer; transition: background .2s;
         }
         .gate-card button:hover { background: var(--teal); }
         .gate-error { color: var(--red); font-size: .75rem; margin-top: .5rem; display: none; }
@@ -119,7 +99,7 @@
         .btn-primary { background: var(--sky); color: var(--crust); border-color: var(--sky); }
         .btn-primary:hover { background: var(--teal); border-color: var(--teal); }
         .btn-ghost { color: var(--subtext); border-color: rgba(137,220,235,.15); background: transparent; }
-        .btn-ghost:hover { background: var(--surface0); color: var(--text); }
+        .btn-ghost:hover { background: var(--mantle); color: var(--text); }
 
         .footer { margin-top: 3rem; text-align: center; font-family: 'JetBrains Mono', monospace; font-size: .7rem; color: var(--overlay); }
         .footer a { color: var(--teal); text-decoration: none; }
@@ -130,11 +110,12 @@
     <!-- Password Gate -->
     <div id="gate" class="gate-overlay">
         <div class="gate-card">
-            <h2>🔒 Test Lab</h2>
-            <p>Password required to enter.</p>
-            <input type="password" id="gate-pass" placeholder="Enter password" autocomplete="off">
+            <h2>🔒 PolyChomp-UI</h2>
+            <p>Login required to enter.</p>
+            <input type="text" id="gate-user" placeholder="Username" autocomplete="off">
+            <input type="password" id="gate-pass" placeholder="Password" autocomplete="off">
             <button onclick="checkGate()">Unlock</button>
-            <p id="gate-error" class="gate-error">Incorrect password.</p>
+            <p id="gate-error" class="gate-error">Incorrect username or password.</p>
         </div>
     </div>
 
@@ -142,8 +123,8 @@
         <a href="index.html" class="back-link">← Back to tagnet.net</a>
 
         <div class="header">
-            <div class="logo">tag<span>net</span> Test Lab</div>
-            <p class="subtitle">Polychomp-UI status & diagnostics</p>
+            <div class="logo">tag<span>net</span> PolyChomp-UI</div>
+            <p class="subtitle">Status &amp; diagnostics dashboard</p>
         </div>
 
         <div class="status-bar" id="conn-bar">
@@ -195,13 +176,18 @@
         </div>
 
         <div class="footer">
-            <p>tagnet.net · Test Lab · <a href="https://github.com/e404-tagnet/polychomp-ui">polychomp-ui</a></p>
+            <p>tagnet.net · PolyChomp-UI · <a href="https://github.com/e404-tagnet/polychomp-ui">Source</a></p>
         </div>
     </div>
 
 <script>
-    // ── Password Gate ──
-    const GATE_HASH = 'c3ab8ff13720e8ad9047dd39466b3c8974e592c2fa383d4a3960714caef0c4f2'; // sha256('polychomp2026')
+    // ── Username + Password Gate ──
+    // SHA-256('guest26tag:192net55net404!')
+    // SHA-256('e404tag:192net55net404!')
+    const VALID_HASHES = [
+        '0cf1e5e8d18a39d20d6dde3af3b22e8807a275f608276e17d04911b18924c8e0',
+        'fcca20521fb38ec6626b61e1edf2cf5bf11f2134a9e130b7786f5567b818ea58'
+    ];
 
     async function sha256(str) {
         const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
@@ -209,27 +195,31 @@
     }
 
     async function checkGate() {
+        const user = document.getElementById('gate-user').value.trim();
         const pass = document.getElementById('gate-pass').value;
-        const hash = await sha256(pass);
-        if (hash === GATE_HASH) {
+        if (!user || !pass) { showError(); return; }
+        const hash = await sha256(`${user}:${pass}`);
+        if (VALID_HASHES.includes(hash)) {
             document.getElementById('gate').classList.add('hidden');
             document.getElementById('dashboard').style.display = 'block';
             sessionStorage.setItem('tagnet_test_auth', hash);
             initDashboard();
         } else {
-            document.getElementById('gate-error').style.display = 'block';
-            document.getElementById('gate-pass').value = '';
+            showError();
         }
     }
 
-    document.getElementById('gate-pass').addEventListener('keydown', e => {
-        if (e.key === 'Enter') checkGate();
-    });
+    function showError() {
+        document.getElementById('gate-error').style.display = 'block';
+        document.getElementById('gate-pass').value = '';
+    }
+
+    document.getElementById('gate-pass').addEventListener('keydown', e => { if (e.key === 'Enter') checkGate(); });
 
     // Auto-unlock if session valid
     (async () => {
         const saved = sessionStorage.getItem('tagnet_test_auth');
-        if (saved === GATE_HASH) {
+        if (saved && VALID_HASHES.includes(saved)) {
             document.getElementById('gate').classList.add('hidden');
             document.getElementById('dashboard').style.display = 'block';
             initDashboard();
@@ -269,9 +259,7 @@
             const data = await res.json();
             document.getElementById('project-count').textContent = data.length;
             log(`Loaded ${data.length} projects`);
-        } catch (e) {
-            document.getElementById('project-count').textContent = '—';
-        }
+        } catch (e) { document.getElementById('project-count').textContent = '—'; }
     }
 
     async function loadPlugins() {
@@ -294,16 +282,13 @@
             const res = await fetch(`${API}/api/profile`, { signal: AbortSignal.timeout(3000) });
             const data = await res.json();
             if (data.exists) {
-                const p = data.profile;
-                document.getElementById('privacy-mode').textContent = p.privacy_default || 'local';
-                log(`Profile loaded — ${p.technical_level} · ${p.interaction_style}`);
+                document.getElementById('privacy-mode').textContent = data.profile.privacy_default || 'local';
+                log(`Profile loaded — ${data.profile.technical_level}`);
             } else {
                 document.getElementById('privacy-mode').textContent = 'local (default)';
-                log('No profile found — onboarding pending');
+                log('No profile — onboarding pending');
             }
-        } catch (e) {
-            document.getElementById('privacy-mode').textContent = '—';
-        }
+        } catch (e) { document.getElementById('privacy-mode').textContent = '—'; }
     }
 
     function renderPluginList(plugins) {
@@ -314,9 +299,7 @@
         }
         container.innerHTML = plugins.map(p => `
             <div class="plugin-row">
-                <div>
-                    <div class="name">${escapeHtml(p.name)}</div>
-                </div>
+                <div class="name">${p.name}</div>
                 <div style="display:flex;align-items:center;gap:.6rem;">
                     <span class="type type-${p.type}">${p.type}</span>
                     <span class="status">${p.enabled ? '● On' : '○ Off'}</span>
@@ -328,7 +311,7 @@
     function log(msg) {
         const el = document.getElementById('activity-log');
         const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-        el.innerHTML += `&lt;${time}&gt; ${escapeHtml(msg)}<br>`;
+        el.innerHTML += `&lt;${time}&gt; ${msg}<br>`;
     }
 
     function refresh() {
@@ -339,12 +322,6 @@
     function clearState() {
         sessionStorage.removeItem('tagnet_test_auth');
         location.reload();
-    }
-
-    function escapeHtml(text) {
-        const div = document.createElement('div');
-        div.textContent = text;
-        return div.innerHTML;
     }
 </script>
 
