@@ -132,6 +132,16 @@
             <span class="status-text" id="conn-text">Checking Polychomp-UI...</span>
         </div>
 
+        <div id="cert-notice" class="card" style="margin-bottom:1rem;display:none;">
+            <h3 style="color:var(--yellow);">First-time setup</h3>
+            <p style="font-size:.8rem;color:var(--subtext);margin-top:.4rem;line-height:1.5;">
+                Polychomp uses a self-signed certificate for local HTTPS.
+                <br>
+                If this page shows no data, visit <a href="https://127.0.0.1:8788" target="_blank" style="color:var(--sky);text-decoration:underline;">this link</a> once and accept the certificate warning.
+                <br>Then return here and click Refresh.
+            </p>
+        </div>
+
         <div class="grid">
             <div class="card">
                 <h3>Projects</h3>
@@ -170,9 +180,9 @@
         </div>
 
         <div class="actions">
-            <a class="btn btn-primary" href="http://127.0.0.1:8788" target="_blank">Open Polychomp-UI -></a>
-            <button class="btn btn-ghost" onclick="refresh()">Refresh Refresh</button>
-            <button class="btn btn-ghost" onclick="clearState()">Clear Clear Session</button>
+            <a class="btn btn-primary" href="https://127.0.0.1:8788" target="_blank">Open Polychomp-UI -></a>
+            <button class="btn btn-ghost" onclick="refresh()">Refresh</button>
+            <button class="btn btn-ghost" onclick="clearState()">Clear Session</button>
         </div>
 
         <div class="footer">
@@ -227,7 +237,7 @@
     })();
 
     // ── Dashboard ──
-    const API = 'http://127.0.0.1:8788';
+    const API = 'https://127.0.0.1:8788';
 
     async function initDashboard() {
         await checkConnection();
@@ -239,18 +249,21 @@
     async function checkConnection() {
         const dot = document.getElementById('conn-dot');
         const text = document.getElementById('conn-text');
+        const notice = document.getElementById('cert-notice');
         try {
             const res = await fetch(`${API}/api/projects`, { signal: AbortSignal.timeout(3000) });
             if (res.ok) {
                 dot.className = 'status-dot online';
                 text.textContent = 'Polychomp-UI online - localhost:8788';
+                if (notice) notice.style.display = 'none';
                 log('Connected to Polychomp-UI');
                 return;
             }
         } catch (e) {}
         dot.className = 'status-dot offline';
-        text.innerHTML = 'Polychomp-UI unreachable - <a href="http://127.0.0.1:8788" target="_blank" style="color:var(--sky);text-decoration:underline;">start locally</a> or check CORS';
-        log('Connection blocked - HTTPS cannot reach HTTP localhost. Start Polychomp-UI on your machine.');
+        text.textContent = 'Polychomp-UI unreachable - check certificate';
+        if (notice) notice.style.display = 'block';
+        log('Connection blocked - accept self-signed cert at https://127.0.0.1:8788 once');
     }
 
     async function loadProjects() {
