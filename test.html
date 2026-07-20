@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PolyChomp-UI — tagnet.net</title>
+    <title>Prism-UI — tagnet.net</title>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -110,7 +110,7 @@
     <!-- Password Gate -->
     <div id="gate" class="gate-overlay">
         <div class="gate-card">
-            <h2>LOCK PolyChomp-UI</h2>
+            <h2>LOCK Prism-UI</h2>
             <p>Login required to enter.</p>
             <input type="text" id="gate-user" placeholder="Username" autocomplete="off">
             <input type="password" id="gate-pass" placeholder="Password" autocomplete="off">
@@ -123,21 +123,21 @@
         <a href="index.html" class="back-link"><- Back to tagnet.net</a>
 
         <div class="header">
-            <div class="logo">tag<span>net</span> PolyChomp-UI</div>
+            <div class="logo">tag<span>net</span> Prism-UI</div>
             <p class="subtitle">Status &amp; diagnostics dashboard</p>
         </div>
 
         <div class="status-bar" id="conn-bar">
             <span class="status-dot offline" id="conn-dot"></span>
-            <span class="status-text" id="conn-text">Checking Polychomp-UI...</span>
+            <span class="status-text" id="conn-text">Checking Prism-UI...</span>
         </div>
 
         <div id="cert-notice" class="card" style="margin-bottom:1rem;display:none;">
             <h3 style="color:var(--yellow);">First-time setup</h3>
             <p style="font-size:.8rem;color:var(--subtext);margin-top:.4rem;line-height:1.5;">
-                Polychomp uses a self-signed certificate for local HTTPS.
+                Prism-UI uses a self-signed certificate for local HTTPS.
                 <br>
-                If this page shows no data, visit <a href="https://127.0.0.1:8788" target="_blank" style="color:var(--sky);text-decoration:underline;">this link</a> once and accept the certificate warning.
+                If this page shows no data, visit <a href="http://127.0.0.1:8788" target="_blank" style="color:var(--sky);text-decoration:underline;">this link</a> once and accept the certificate warning.
                 <br>Then return here and click Refresh.
             </p>
         </div>
@@ -180,13 +180,13 @@
         </div>
 
         <div class="actions">
-            <a class="btn btn-primary" href="https://127.0.0.1:8788" target="_blank">Open Polychomp-UI -></a>
+            <a class="btn btn-primary" href="http://127.0.0.1:8788" target="_blank">Open Prism-UI -></a>
             <button class="btn btn-ghost" onclick="refresh()">Refresh</button>
             <button class="btn btn-ghost" onclick="clearState()">Clear Session</button>
         </div>
 
         <div class="footer">
-            <p>tagnet.net · PolyChomp-UI · <a href="https://github.com/e404-tagnet/polychomp-ui">Source</a></p>
+            <p>tagnet.net · Prism-UI · <a href="https://github.com/e404-tagnet/polychomp-ui">Source</a></p>
         </div>
     </div>
 
@@ -237,7 +237,7 @@
     })();
 
     // ── Dashboard ──
-    const API = 'https://127.0.0.1:8788';
+    const API = 'http://127.0.0.1:8788';
 
     async function initDashboard() {
         await checkConnection();
@@ -254,16 +254,16 @@
             const res = await fetch(`${API}/api/projects`, { signal: AbortSignal.timeout(3000) });
             if (res.ok) {
                 dot.className = 'status-dot online';
-                text.textContent = 'Polychomp-UI online - localhost:8788';
+                text.textContent = 'Prism-UI online - localhost:8788';
                 if (notice) notice.style.display = 'none';
-                log('Connected to Polychomp-UI');
+                log('Connected to Prism-UI');
                 return;
             }
         } catch (e) {}
         dot.className = 'status-dot offline';
-        text.textContent = 'Polychomp-UI unreachable - check certificate';
+        text.textContent = 'Prism-UI unreachable - check if server is running';
         if (notice) notice.style.display = 'block';
-        log('Connection blocked - accept self-signed cert at https://127.0.0.1:8788 once');
+        log('Connection blocked - accept self-signed cert at http://127.0.0.1:8788 once');
     }
 
     async function loadProjects() {
