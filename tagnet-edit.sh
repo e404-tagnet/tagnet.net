@@ -6,7 +6,7 @@ set -uo pipefail
 
 source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../../7-SCRIPTS/Launchers/runbook-lib.sh"
 
-REPO_DIR="$HOME/Dropbox/9-PROJECTS/tagnet.net"
+REPO_DIR="$HOME/Cloud/Git-Repos/tagnet.net"
 
 tagnet_edit_banner() {
     rb_ascii_banner "$RB_SKY" \

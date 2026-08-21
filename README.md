@@ -22,15 +22,32 @@ tagnet is the public umbrella for e404-tagnet's experiments in local-first AI, a
 
 ## Repositories
 
+### Memory & Reactive Scaffolds
+
 | Repo | What it is |
 |---|---|
-| [IOS-Widgets](https://github.com/e404-tagnet/IOS-Widgets) | iOS Scriptable widgets — 13 customisable widgets for iOS. |
-| [algorithmic-tools](https://github.com/e404-tagnet/algorithmic-tools) | Government algorithmic decision-making assessment toolkit. |
-| [errolhendricke.com](https://github.com/e404-tagnet/errolhendricke.com) | Static artist portfolio and gallery site for Errol Hendrickse. |
-| [fragment-anchoring](https://github.com/e404-tagnet/fragment-anchoring) | Research testbed for navigating generative text spaces with known fragments. |
+| [prism](https://github.com/e404-tagnet/prism) | Shadow Bayesian middleware for local LLM conversations. |
 | [memory-scaffold](https://github.com/e404-tagnet/memory-scaffold) | Archive of memory scaffolds and agent control layers. |
-| [prism-scaffold](https://github.com/e404-tagnet/prism-scaffold) | Shadow Bayesian middleware for local LLM conversations. |
+
+### Experimental Architectures
+
+| Repo | What it is |
+|---|---|
+| [hierarchical-vae](https://github.com/e404-tagnet/hierarchical-vae) | Hierarchical variational autoencoder experiments. |
+| [sim-ae](https://github.com/e404-tagnet/sim-ae) | Simulated autoencoder research. |
+
+### Research & Development
+
+| Repo | What it is |
+|---|---|
 | [prism-ui](https://github.com/e404-tagnet/prism-ui) | Local-first AI workbench GUI for PRISM. |
+| [radix-n-system](https://github.com/e404-tagnet/radix-n-system) | Radix-n numerical system experiments. |
+| [fragment-anchoring](https://github.com/e404-tagnet/fragment-anchoring) | Research testbed for navigating generative text spaces with known fragments. |
+
+### This repo
+
+| Repo | What it is |
+|---|---|
 | [tagnet.net](https://github.com/e404-tagnet/tagnet.net) | Source for tagnet.net landing page and shared README templates. |
 
 ## What's in this repo
