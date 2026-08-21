@@ -57,7 +57,6 @@ def footer(owner, repo):
     """Return the standard footer markdown block."""
     return textwrap.dedent(f"""\
         <!-- TAGNET README FOOTER — start -->
-        ---
 
         <div align="center">
 

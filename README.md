@@ -4,7 +4,6 @@
 [![License](https://img.shields.io/github/license/e404-tagnet/tagnet.net?color=313244&labelColor=11111b&label=License&style=flat-square)](https://github.com/e404-tagnet/tagnet.net/blob/master/LICENSE)
 [![Status](https://img.shields.io/badge/Status-stable-a6e3a1?labelColor=11111b&style=flat-square)](https://github.com/e404-tagnet/tagnet.net/pulse)
 [![Version](https://img.shields.io/github/v/release/e404-tagnet/tagnet.net?color=313244&labelColor=11111b&label=Version&style=flat-square)](https://github.com/e404-tagnet/tagnet.net/releases)
-[![Site](https://img.shields.io/badge/Site-tagnet.net-94e2d5?labelColor=11111b&style=flat-square&logo=google-chrome&logoColor=94e2d5)](https://tagnet.dev)
 [![Repo](https://img.shields.io/badge/Repo-tagnet.net-94e2d5?labelColor=11111b&style=flat-square&logo=github&logoColor=94e2d5)](https://github.com/e404-tagnet/tagnet.net)
 [![Tagnet](https://img.shields.io/badge/By-Tagnet-89dceb?labelColor=11111b&style=flat-square&logo=tag&logoColor=89dceb)](https://tagnet.dev)
 
@@ -55,7 +54,6 @@ Ollama · ATLAS Router · Hermes · PRISM · Llama.cpp · Scriptable · Cloudfla
 ## Contact
 
 192.55.404@protonmail.com
-
 
 <!-- TAGNET README FOOTER — start -->
 
