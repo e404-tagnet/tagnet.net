@@ -130,6 +130,23 @@
             font-size: 1.25rem;
         }
         .link:hover .link-arrow { color: var(--sky); }
+        .login-link {
+            border: 2px solid var(--teal);
+            background: rgba(148, 226, 213, 0.15);
+        }
+        .login-link:hover {
+            background: rgba(148, 226, 213, 0.25);
+            border-color: var(--sky);
+        }
+        .login-icon {
+            width: 2rem; height: 2rem;
+            display: flex; align-items: center; justify-content: center;
+            background: rgba(148, 226, 213, 0.2);
+            border-radius: 0.5rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--teal);
+        }
         .footer {
             font-family: 'JetBrains Mono', monospace;
             font-size: 0.75rem;
@@ -161,17 +178,6 @@
         </div>
 
         <div class="links">
-            <div class="group">
-                <div class="group-title">Prism-UI</div>
-                <a class="link" href="test.html">
-                    <span class="link-label">
-                        <span class="link-icon" style="background:rgba(148,226,213,.1);color:var(--teal);">🎯</span>
-                        Launch Prism-UI
-                    </span>
-                    <span class="link-arrow">-></span>
-                </a>
-            </div>
-
             <div class="group">
                 <div class="group-title">Memory & Reactive Scaffolds</div>
                 <a class="link" href="https://github.com/e404-tagnet/prism" target="_blank" rel="noopener">
@@ -233,6 +239,14 @@
                 </a>
             </div>
         </div>
+
+        <a class="link login-link" href="test.html" style="margin: 2rem auto; max-width: 400px;">
+            <span class="link-label">
+                <span class="login-icon">&lt;/&gt;</span>
+                LOGIN
+            </span>
+            <span class="link-arrow">-></span>
+        </a>
 
         <div class="footer">
             <p>tagnet.net · <a href="mailto:info@tagnet.net">info@tagnet.net</a></p>
